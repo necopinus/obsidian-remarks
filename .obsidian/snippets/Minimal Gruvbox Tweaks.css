@@ -1,0 +1,11 @@
+/*
+Gruvbox
+MIT License
+https://github.com/morhetz/gruvbox
+*/
+
+.theme-dark.minimal-gruvbox-dark,
+.theme-light.minimal-gruvbox-light {
+    --color-pink-rgb: 193, 71, 98; /* color-mix(in oklch shorter hue, var(--color-red) calc(1/2), var(--color-purple) calc(1/2)) */
+    --color-pink: #c14762; /* color-mix(in oklch shorter hue, var(--color-red) calc(1/2), var(--color-purple) calc(1/2)) */
+}

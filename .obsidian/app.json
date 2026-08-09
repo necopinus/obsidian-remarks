@@ -1,0 +1,24 @@
+{
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "assets",
+  "showInlineTitle": false,
+  "autoPairBrackets": true,
+  "autoPairMarkdown": true,
+  "showLineNumber": true,
+  "mobileToolbarCommands": [
+    "editor:undo",
+    "obsidian-outliner:indent-list",
+    "obsidian-outliner:outdent-list",
+    "obsidian-outliner:move-list-item-up",
+    "obsidian-outliner:move-list-item-down",
+    "editor:toggle-bullet-list",
+    "editor:cycle-list-checklist",
+    "insert-current-time",
+    "editor:attach-file"
+  ],
+  "newFileFolderPath": "pages",
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false
+}

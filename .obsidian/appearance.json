@@ -1,0 +1,21 @@
+{
+  "accentColor": "",
+  "theme": "moonstone",
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [
+    "Everforest Light Highlight Overrides",
+    "Header",
+    "Minimal Accent",
+    "Markdown Embed Tweaks",
+    "GitHub Alerts",
+    "Custom Callouts",
+    "Callout Tweaks",
+    "Minimal Gruvbox Tweaks",
+    "Accent Orange",
+    "Bullet Journaling Tweaks",
+    "Dataview Tweaks"
+  ],
+  "showViewHeader": true,
+  "translucency": false,
+  "baseFontSize": 16
+}

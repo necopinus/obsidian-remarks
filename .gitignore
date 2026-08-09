@@ -1,0 +1,10 @@
+# Editor swap/backup files
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# macOS graffiti
+.DS_Store
+._*

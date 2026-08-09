@@ -1,0 +1,7 @@
+.callout[data-callout="package"] {
+	--callout-icon: lucide-package;
+	--callout-color: var(--callout-quote);
+}
+.callout[data-callout="package"] .callout-title-inner {
+	font-weight: normal;
+}

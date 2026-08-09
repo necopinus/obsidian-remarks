@@ -1,0 +1,7 @@
+div.callout {
+	padding: var(--size-4-6);
+}
+
+div.callout > * > :last-child {
+	margin-block-end: 0;
+}

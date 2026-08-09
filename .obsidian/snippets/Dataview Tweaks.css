@@ -1,0 +1,31 @@
+.dataview.inline-field-key,
+.dataview.inline-field-value {
+	font-size: x-small;
+	color: var(--text-muted);
+	background-color: transparent;
+}
+
+.dataview.inline-field-standalone-value {
+	padding-left: 0;
+	padding-right: 0;
+	font-size: small;
+	color: var(--text-muted);
+	background-color: transparent;
+}
+
+.dataview.inline-field-key {
+	padding-left: 0;
+	font-weight:  bold;
+}
+
+.dataview.inline-field-value {
+	padding-right: 0;
+}
+
+.dataview.inline-field-value .external-link {
+	padding-inline-end: 14px;
+}
+
+.dataview.inline-field-value a.tag:empty {
+	display: none;
+}

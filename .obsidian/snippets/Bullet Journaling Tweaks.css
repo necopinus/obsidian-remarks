@@ -1,0 +1,14 @@
+.workspace-leaf-content[data-mode="preview"] .list-bullet {
+	width: var(--checkbox-size);
+	margin-inline-start: calc(var(--checkbox-size) * -1.5);
+}
+
+/*
+ * IMPORTANT - "Improve the style of your lists" must be OFF in the "Outliner"
+ * plugin or the cursor will be mis-placed at the start of a bullet point!
+ */
+.workspace-leaf-content[data-mode="source"] .HyperMD-list-line .list-bullet {
+	width: var(--checkbox-size);
+	margin-inline-start: -4px;
+	margin-inline-end: 4px;
+}

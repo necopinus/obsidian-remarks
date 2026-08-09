@@ -1,0 +1,50 @@
+/*
+ * Pulled from the default Obsidian colors
+ * Last checked: 2025-06-14
+ */
+
+/*
+ * --color-purple: #7852ee;
+ * --color-purple-rgb: 120, 82, 238;
+ */
+.theme-light {
+  --accent-h: 255;
+  /* Accent hue */
+  --accent-s: 82%;
+  /* Accent saturation */
+  --accent-l: 63%;
+  /* Accent lightness */
+
+  --hl1: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 10%) !important;
+}
+
+/*
+ * --color-purple: #a882ff;
+ * --color-purple-rgb: 168, 130, 255;
+ */
+.theme-dark {
+  --accent-h: 258;
+  /* Accent hue */
+  --accent-s: 100%;
+  /* Accent saturation */
+  --accent-l: 74%;
+  /* Accent lightness - 2% */
+
+  --hl1: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 20%) !important;
+}
+
+/*
+ * --color-purple: #b16286;
+ * --color-purple-rgb: 177, 98, 134;
+ */
+.theme-light.minimal-gruvbox-light,
+.theme-dark.minimal-gruvbox-dark {
+  --accent-h: 333 !important;
+  /* Accent hue */
+  --accent-s: 34% !important;
+  /* Accent saturation */
+  --accent-l: 48% !important;
+  /* Accent lightness; 54% by default */
+
+  --hl1: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 10%) !important;
+}

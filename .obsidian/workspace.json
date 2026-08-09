@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "4900f96eb980e0e2",
+    "type": "split",
+    "children": [
+      {
+        "id": "5b0a2f819ee6bed3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8ec06479d1409dc9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Delphi Foresight Strategy.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Delphi Foresight Strategy"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a14ae78b68d5193c",
+    "type": "split",
+    "children": [
+      {
+        "id": "19695516aad6805b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "503f308ac108c98f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "25bee4b733ecec67",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "59eaa78bc5d3dd10",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 232.5
+  },
+  "right": {
+    "id": "e3c571aaa83102be",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c23eb2272f8f8cd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e5428c798919ab63",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Delphi Foresight Strategy.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "ac1212258b3ccd60",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "Delphi Foresight Strategy.md"
+              },
+              "icon": "lucide-file-signature",
+              "title": "Footnotes"
+            }
+          },
+          {
+            "id": "cd36306c4d9f461a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "writings/2018-10-03.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "09347625992f2aad",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "writings/2018-10-03.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "omnisearch:Omnisearch": false,
+      "command-palette:Open command palette": false,
+      "random-note:Open random note": false,
+      "graph:Open graph view": false,
+      "templates:Insert template": false,
+      "daily-notes:Open today's daily note": false,
+      "publish:Publish changes...": false
+    }
+  },
+  "active": "8ec06479d1409dc9",
+  "lastOpenFiles": [
+    "assets/3AB0E33346446BB52AECDB452064B1E8.webm",
+    "assets/4B03500AECF3B15DB687105445DB63FE.jpg",
+    "assets/8DDC6718BBFB1499231E8CC56CA79748.mkv",
+    "assets/586835EE614DBEA682EFD2B37128B2CC.webm",
+    "assets/822935B38B8646E6B8EE425DC42A963F.mkv",
+    "ctfs/2023-04-27.md",
+    "Delphi Foresight Strategy.md",
+    "ctfs/2022-04-03.md",
+    "essays/2022-11-27.md",
+    "ctfs/2023-08-11.md",
+    "ctfs/2022-08-20.md",
+    "assets/59f8608d05e49cbebb8fff4d1da82bf1.jpg",
+    "assets/bb1afcc681a92b06409451d724e09643.jpg",
+    "essays/2022-08-15.md",
+    "ctfs/2022-02-02.md",
+    "ctfs/2022-03-19.md",
+    "ctfs/2022-02-01.md",
+    "ctfs/2022-01-30.md",
+    "ctfs/2022-01-02.md",
+    "ctfs/2021-12-30.md",
+    "ctfs/2020-07-27.md",
+    "ctfs/2021-10-10.md",
+    "ctfs/2021-11-04.md",
+    "ctfs/2021-12-07.md",
+    "ctfs/2021-12-08.md",
+    "ctfs/2021-12-14.md",
+    "gobuster.md",
+    "essays/2016-09-05.md",
+    "essays/2016-06-22.md",
+    "essays/2016-06-21.md",
+    "essays/2013-10-20.md",
+    "essays/2013-10-06.md",
+    "newsletters",
+    "ctfs",
+    "assets/assets",
+    "smart-templates",
+    "metadata",
+    "pages",
+    "banner-2.jpg",
+    "assets/favicon-256x256.png",
+    "Journal/Assets/408782507FC44CD9A5054041DC8044C9.jpeg",
+    "Essays/Assets/Hackers Movie Clip Zero Cool (Dade) hacks into TV Station (2efhrCxI4J0).jpg",
+    "Commentary/Assets/Hackers Movie Clip Zero Cool (Dade) hacks into TV Station (2efhrCxI4J0).jpg",
+    "Library/Assets/The Orrery at The Interval.jpeg",
+    "Library/Assets/Futures Poker (3).jpeg"
+  ]
+}

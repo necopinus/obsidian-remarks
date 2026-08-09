@@ -1,0 +1,26 @@
+/* https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts */
+
+.callout[data-callout="note"] {
+	--callout-icon: lucide-info;
+	--callout-color: var(--color-blue);
+}
+
+.callout[data-callout="tip"] {
+	--callout-icon: lucide-lightbulb;
+	--callout-color: var(--color-green);
+}
+
+.callout[data-callout="important"] {
+	--callout-icon: lucide-message-square-warning;
+	--callout-color: var(--color-purple);
+}
+
+.callout[data-callout="warning"] {
+	--callout-icon: lucide-triangle-alert;
+	--callout-color: var(--color-yellow);
+}
+
+.callout[data-callout="caution"] {
+	--callout-icon: lucide-octagon-alert;
+	--callout-color: var(--color-red);
+}

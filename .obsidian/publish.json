@@ -1,0 +1,10 @@
+{
+  "siteId": "0bdcd56cb19e67c430e90e146f644025",
+  "host": "publish-01.obsidian.md",
+  "included": [],
+  "excluded": [
+    "metadata",
+    "templates",
+    "assets/private"
+  ]
+}
