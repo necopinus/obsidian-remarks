@@ -8,3 +8,9 @@
 # macOS graffiti
 .DS_Store
 ._*
+
+# Obsidian graffiti
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.trash/
