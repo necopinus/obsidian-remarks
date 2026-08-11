@@ -214,14 +214,6 @@ plugins:
       position: beforeBody
       priority: 5
       condition: not-index
-  - source: "@quartz-community/comments"
-    enabled: false
-    options:
-      provider: giscus
-      options: {}
-    layout:
-      position: afterBody
-      priority: 10
   - source: "@quartz-community/footer"
     enabled: true
     options:
