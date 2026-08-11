@@ -8,10 +8,6 @@ configuration:
     provider: plausible
   locale: en-US
   baseUrl: remarks.delphi-strategy.com
-  ignorePatterns:
-    - private
-    - templates
-    - .obsidian
   theme:
     fontOrigin: googleFonts
     cdnCaching: true

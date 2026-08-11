@@ -51,12 +51,15 @@ cd quartz || exit 1
 
 (
 	cd content || exit 1
-	tar -cf - -C ../../../ --exclude='.build' . | tar -xf -
-	rm -rf .git \
-	       .gitignore \
-	       .obsidian \
-	       .trash
-	find . -type f \( -name '.DS_Store' -o -name '.nomedia' \) -delete
+	tar -cf - -C ../../../ \
+	        --exclude='.build' \
+	        --exclude='.DS_Store' \
+	        --exclude='.git' \
+	        --exclude='.gitignore' \
+	        --exclude='.nomedia' \
+	        --exclude='.obsidian' \
+	        --exclude='.trash' \
+	                  . | tar -xf -
 )
 
 cp -af ../overlay/* ./
