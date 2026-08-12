@@ -82,7 +82,7 @@ plugins:
   - source: "@quartz-community/hard-line-breaks"
     enabled: true
     order: 90
-  - source: "@quartz-community/fonts"
+  - source: "@quartz-community/quartz-fonts"
     enabled: true
   - source: "@quartz-themes/core"
     enabled: true

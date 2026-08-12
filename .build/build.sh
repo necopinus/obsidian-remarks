@@ -59,10 +59,10 @@ cd quartz || exit 1
 	        --exclude='.nomedia' \
 	        --exclude='.obsidian' \
 	        --exclude='.trash' \
-	                  . | tar -xf -
+	                  . | tar -xvf -
 )
 
-cp -af ../overlay/* ./
+cp -avf ../overlay/* ./
 
 npm install
 npx quartz plugin install --from-config
