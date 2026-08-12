@@ -1,8 +1,96 @@
 @use "./variables.scss" as *;
 
+// TODO: Reduce transclude header sizes
+// TODO: Fix backlinks formatting
+// TODO: Fix recent notes formatting
+// TODO: Tweak footer formatting
+// TODO: Fix search box / mode button horizontal spacing
+
 // Use Obsidian highlight color for all highlights
 .highlight {
   background-color: var(--textHighlight);
+}
+
+// Tweak pre/code colors
+// IMPORTANT: Must sync with syntax-highlighting themes!
+body.theme-light code,
+body.theme-light pre {
+  color: #3c3836;
+  background: #f2e5bc;
+}
+
+body.theme-dark code,
+body.theme-dark pre {
+  color: #ebdbb2;
+  background: #32302f;
+}
+
+pre>code>[data-line]:before {
+  color: var(--gray);
+}
+
+// Align callout colors with Obsidian Minimal Gruvbox theme
+// SEE: /quartz/styles/callouts.scss
+.callout[data-callout],
+.callout[data-callout="info"],
+.callout[data-callout="todo"] {
+  // blue
+  --color: #458588;
+  --border: #45858844;
+  --bg: #45858810;
+}
+
+.callout[data-callout="abstract"],
+.callout[data-callout="tip"] {
+  // cyan
+  --color: #689d6a;
+  --border: #689d6a44;
+  --bg: #689d6a10;
+}
+
+.callout[data-callout="success"] {
+  // green
+  --color: #98971a;
+  --border: #98971a44;
+  --bg: #98971a10;
+}
+
+.callout[data-callout="question"],
+.callout[data-callout="warning"] {
+  // orange
+  --color: #d65d0e;
+  --border: #d65d0e44;
+  --bg: #d65d0e10;
+}
+
+.callout[data-callout="failure"],
+.callout[data-callout="danger"],
+.callout[data-callout="bug"] {
+  // red
+  --color: #cc241d;
+  --border: #cc241d44;
+  --bg: #cc241d10;
+}
+
+.callout[data-callout="example"] {
+  // purple
+  --color: #b16286;
+  --border: #b1628644;
+  --bg: #b1628610;
+}
+
+body.theme-light .callout[data-callout="quote"] {
+  // gray
+  --color: #7c6f64;
+  --border: #a89984;
+  --bg: #d5c4a1;
+}
+
+body.theme-dark .callout[data-callout="quote"] {
+  // gray
+  --color: #a89984;
+  --border: #7c6f64;
+  --bg: #504945;
 }
 
 // Hide the entire right sidebar on widths < 1200px (not just the TOC)
@@ -17,22 +105,63 @@
   display: none;
 }
 
-// Hide page header on the main index (as it doesn't make sense)
+// Better element separation for explorer and TOC
+.explorer-content ul.content li,
+ul.toc-content li {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+.explorer-content ul.content li:last-child,
+ul.toc-content li:nth-last-child(2),
+ul.toc-content li:last-child {
+  border-bottom: none;
+}
+
+ul.toc-content.overflow .depth-0 {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul.toc-content.overflow .depth-1 {
+  margin-left: 1rem;
+  padding-left: 0;
+}
+
+ul.toc-content.overflow .depth-2 {
+  margin-left: 2rem;
+  padding-left: 0;
+}
+
+ul.toc-content.overflow .depth-3 {
+  margin-left: 3rem;
+  padding-left: 0;
+}
+
+ul.toc-content.overflow .depth-4 {
+  margin-left: 4rem;
+  padding-left: 0;
+}
+
+ul.toc-content.overflow .depth-5 {
+  margin-left: 5rem;
+  padding-left: 0;
+}
+
+// Hide page content metadata on the main index (as it doesn't make
+// sense in that context)
 body[data-slug="index"] .page-header .content-meta {
   display: none;
 }
+
+// ------------------- Delphi Foresight Strategy ------------------- //
 
 // Do not display recent notes on index pages (as it's duplicative)
 body[data-slug="index"] .recent-notes,
 body[data-slug$="/index"] .recent-notes,
 body[data-slug^="tags/"] .recent-notes {
   display: none;
-}
-
-// Remove border around title image on the main index (to improve
-// spacing)
-body[data-slug="index"] article img:first-child {
-  margin-top: 0;
 }
 
 // Reduce page title size to keep everything on a single line
@@ -46,11 +175,8 @@ body[data-slug="index"] article img:first-child {
   font-size: 1.25rem;
 }
 
-// TODO: Reduce transclude header sizes
-// TODO: Fix backlinks formatting
-// TODO: Fix recent notes formatting
-// TODO: Tweak footer formatting
-// TODO: Tweak site title size
-// TODO: Fix search box / mode button horizontal spacing
-// TODO: Tweak navigation formatting
-// TODO: Tweak TOC formatting
+// Remove border around title image on the main index (to improve
+// spacing)
+body[data-slug="index"] article img:first-child {
+  margin-top: 0;
+}

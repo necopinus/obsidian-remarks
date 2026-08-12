@@ -16,11 +16,11 @@ configuration:
       code: Noto Sans Mono
     colors:
       lightMode:
-        light: "#fcf2c7"           # --bg1
+        light: "#fbf1c7"           # --bg1
         lightgray: "#ebdbb2"       # --ui1
         gray: "#bdae93"            # --ui3
         darkgray: "#282828"        # --tx1
-        dark: "#7c7065"            # --tx2
+        dark: "#7c6f64"            # --tx2
         secondary: "#bb520c"       # --ax1 (orange)
         tertiary: "#954109"        # --ax2 (orange)
         highlight: "#bb520c1a"     # --hl1 (orange)
@@ -164,9 +164,10 @@ plugins:
     enabled: true
     options:
       links:
-        Frontpage: https://delphi-strategy.com
+        Homepage: https://delphi-strategy.com
         RSS feed: /index.xml
         GitHub: https://github.com/necopinus
+        Author: https://necopinus.xyz
     layout:
       position: footer
       priority: 50
