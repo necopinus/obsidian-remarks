@@ -1,3 +1,25 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// Use Obsidian highlight color for all highlights
+.highlight {
+  background-color: var(--textHighlight);
+}
+
+// Style recent notes like backlinks
+.recent-notes {
+  flex-direction: column;
+  max-height: 100%;
+  overflow-y: hidden;
+}
+
+.recent-notes>h3 {
+  margin: 0;
+}
+
+.recent-notes>ul.recent-ul {
+  overscroll-behavior: contain;
+  max-height: calc(100% - 2rem);
+  margin: .5rem 0;
+  padding: 0;
+  list-style: none;
+}

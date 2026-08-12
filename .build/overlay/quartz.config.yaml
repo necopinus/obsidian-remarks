@@ -6,6 +6,7 @@ configuration:
   enablePopovers: true
   locale: en-US
   baseUrl: remarks.delphi-strategy.com
+  ignorePatterns: []
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
@@ -82,13 +83,6 @@ plugins:
   - source: "@quartz-community/hard-line-breaks"
     enabled: true
     order: 90
-  - source: "@quartz-community/quartz-fonts"
-    enabled: true
-  - source: "@quartz-themes/core"
-    enabled: true
-    options:
-      theme: default
-      mode: both
   - source: "@quartz-community/alias-redirects"
     enabled: true
   - source: "@quartz-community/content-index"
@@ -135,21 +129,11 @@ plugins:
     layout:
       position: right
       priority: 50
-  - source: "@quartz-community/article-title"
-    enabled: true
-    layout:
-      position: beforeBody
-      priority: 10
   - source: "@quartz-community/content-meta"
     enabled: true
     layout:
       position: beforeBody
       priority: 20
-  - source: "@quartz-community/tag-list"
-    enabled: false
-    layout:
-      position: beforeBody
-      priority: 30
   - source: "@quartz-community/page-title"
     enabled: true
     layout:
@@ -189,11 +173,15 @@ plugins:
   - source: "@quartz-community/recent-notes"
     enabled: true
     options:
+      title: Recent notes
       limit: 4
       showTags: false
-      linkToMore: true
       hideTagPages: true
       hideFolderPages: true
+    layout:
+      position: left
+      priority: 75
+      display: desktop-only
   - source: "@quartz-community/spacer"
     enabled: true
     options: {}
@@ -204,6 +192,12 @@ plugins:
       display: mobile-only
   - source: "@quartz-community/note-properties"
     enabled: true
+    options:
+      includedProperties:
+        - weekday
+        - volume
+        - issue
+        - tags
     order: 5
     layout:
       position: beforeBody
