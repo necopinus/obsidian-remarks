@@ -5,21 +5,52 @@
   background-color: var(--textHighlight);
 }
 
-// Style recent notes like backlinks
-.recent-notes {
-  flex-direction: column;
-  max-height: 100%;
-  overflow-y: hidden;
+// Hide the entire right sidebar on widths < 1200px (not just the TOC)
+@media not (min-width: 1200px) {
+  .page>#quartz-body .sidebar.right {
+    display: none;
+  }
 }
 
-.recent-notes>h3 {
-  margin: 0;
+// Hide h1 elements in transcludes
+.transclude>h1 {
+  display: none;
 }
 
-.recent-notes>ul.recent-ul {
-  overscroll-behavior: contain;
-  max-height: calc(100% - 2rem);
-  margin: .5rem 0;
-  padding: 0;
-  list-style: none;
+// Hide page header on the main index (as it doesn't make sense)
+body[data-slug="index"] .page-header .content-meta {
+  display: none;
 }
+
+// Do not display recent notes on index pages (as it's duplicative)
+body[data-slug="index"] .recent-notes,
+body[data-slug$="/index"] .recent-notes,
+body[data-slug^="tags/"] .recent-notes {
+  display: none;
+}
+
+// Remove border around title image on the main index (to improve
+// spacing)
+body[data-slug="index"] article img:first-child {
+  margin-top: 0;
+}
+
+// Reduce page title size to keep everything on a single line
+@media not (min-width: 800px) {
+  .page-title {
+    font-size: 1rem;
+  }
+}
+
+.page-title {
+  font-size: 1.25rem;
+}
+
+// TODO: Reduce transclude header sizes
+// TODO: Fix backlinks formatting
+// TODO: Fix recent notes formatting
+// TODO: Tweak footer formatting
+// TODO: Tweak site title size
+// TODO: Fix search box / mode button horizontal spacing
+// TODO: Tweak navigation formatting
+// TODO: Tweak TOC formatting

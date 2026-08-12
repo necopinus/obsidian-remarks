@@ -88,7 +88,7 @@ plugins:
   - source: "@quartz-community/content-index"
     enabled: true
     options:
-      rssLimit: 1000
+      rssLimit: 10 # Sync with recent-notes > options.limit
       rssFullHtml: true
       includeEmptyFiles: false
   - source: "@quartz-community/favicon"
@@ -127,7 +127,7 @@ plugins:
   - source: "@quartz-community/backlinks"
     enabled: true
     layout:
-      position: right
+      position: afterBody
       priority: 50
   - source: "@quartz-community/content-meta"
     enabled: true
@@ -151,6 +151,7 @@ plugins:
       position: left
       priority: 35
       group: toolbar
+      display: desktop-only
   - source: "@quartz-community/breadcrumbs"
     enabled: true
     options:
@@ -166,7 +167,6 @@ plugins:
         Frontpage: https://delphi-strategy.com
         RSS feed: /index.xml
         GitHub: https://github.com/necopinus
-        Author: https://necopinus.xyz
     layout:
       position: footer
       priority: 50
@@ -174,12 +174,13 @@ plugins:
     enabled: true
     options:
       title: Recent notes
-      limit: 4
+      limit: 10 # Sync with content-index > options.rssLimit
       showTags: false
+      linkToMore: index
       hideTagPages: true
       hideFolderPages: true
     layout:
-      position: left
+      position: afterBody
       priority: 75
       display: desktop-only
   - source: "@quartz-community/spacer"
