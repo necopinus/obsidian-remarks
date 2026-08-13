@@ -1,11 +1,5 @@
 @use "./variables.scss" as *;
 
-// TODO: Reduce transclude header sizes
-// TODO: Fix backlinks formatting
-// TODO: Fix recent notes formatting
-// TODO: Tweak footer formatting
-// TODO: Fix search box / mode button horizontal spacing
-
 // Use Obsidian highlight color for all highlights
 .highlight {
   background-color: var(--textHighlight);
@@ -93,6 +87,18 @@ body.theme-dark .callout[data-callout="quote"] {
   --bg: #504945;
 }
 
+// Use slightly more generous spacing for search / button group
+.left.sidebar>.flex-component {
+  gap: 1rem !important;
+}
+
+@media not (min-width: 800px) {
+  .left.sidebar>.flex-component {
+    margin-right: calc(5px - 1rem);
+    min-width: min(50%, calc(14rem + 1rem + 20px + 1rem));
+  }
+}
+
 // Hide the entire right sidebar on widths < 1200px (not just the TOC)
 @media not (min-width: 1200px) {
   .page>#quartz-body .sidebar.right {
@@ -100,12 +106,31 @@ body.theme-dark .callout[data-callout="quote"] {
   }
 }
 
-// Hide h1 elements in transcludes
+// Transclude header tweaks
 .transclude>h1 {
   display: none;
 }
 
+.transclude>h2 {
+  font-size: 1.12rem;
+  margin-top: 1.62rem;
+  margin-bottom: 1rem;
+}
+
+.transclude>h3,
+.transclude>.transclude>h2 {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 // Better element separation for explorer and TOC
+@media not (min-width: 800px) {
+  .explorer-content>ul.overflow li {
+    margin-right: 1rem;
+  }
+}
+
 .explorer-content ul.content li,
 ul.toc-content li {
   padding-top: 0.5rem;
@@ -149,6 +174,44 @@ ul.toc-content.overflow .depth-5 {
   padding-left: 0;
 }
 
+// Tweak trailing page elements
+.backlinks {
+  border-bottom: 1px solid var(--lightgray);
+  margin-bottom: 1.25rem;
+  margin-top: 2rem;
+}
+
+.backlinks>ul.overflow {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.backlinks>ul.overflow>li {
+  margin: 1rem 0
+}
+
+.backlinks>ul.overflow>li.overflow-end {
+  display: none;
+}
+
+.recent-notes {
+  border-bottom: 1px solid var(--lightgray);
+  margin-bottom: 1.25rem;
+  margin-top: 2rem;
+}
+
+.recent-notes>ul.recent-ul>li.recent-li>div.section>div.desc>h3 {
+  font-size: 1rem;
+}
+
+.recent-notes> :last-child {
+  margin-bottom: 2rem;
+}
+
+.page>#quartz-body footer> :first-child {
+  margin-top: 0;
+}
+
 // Hide page content metadata on the main index (as it doesn't make
 // sense in that context)
 body[data-slug="index"] .page-header .content-meta {
@@ -164,19 +227,30 @@ body[data-slug^="tags/"] .recent-notes {
   display: none;
 }
 
+body[data-slug="index"] .page>#quartz-body footer,
+body[data-slug$="/index"] .page>#quartz-body footer,
+body[data-slug^="tags/"] .page>#quartz-body footer {
+  margin-top: -0.75rem;
+}
+
 // Reduce page title size to keep everything on a single line
-@media not (min-width: 800px) {
+@media (min-width: 800px) {
   .page-title {
-    font-size: 1rem;
+    font-size: 1.25rem;
+    padding-right: 0;
   }
 }
 
-.page-title {
-  font-size: 1.25rem;
+@media not (min-width: 800px) {
+  .page-title {
+    font-size: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 // Remove border around title image on the main index (to improve
 // spacing)
 body[data-slug="index"] article img:first-child {
-  margin-top: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
 }

@@ -2,7 +2,7 @@
 title: Delphi Foresight Strategy
 ---
 ![[4B03500AECF3B15DB687105445DB63FE.jpg|Delphi Foresight Strategy]]
-<center><em>Viable Futures Through Reasoned Thought</em></center>
+<center><em>Viable futures through reasoned thought</em></center>
 
 ## Essays
 

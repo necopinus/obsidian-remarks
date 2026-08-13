@@ -155,7 +155,7 @@ plugins:
   - source: "@quartz-community/breadcrumbs"
     enabled: true
     options:
-      rootName: Index
+      rootName: index
     layout:
       position: beforeBody
       priority: 5
