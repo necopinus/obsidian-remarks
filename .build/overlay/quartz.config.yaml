@@ -166,7 +166,7 @@ plugins:
       links:
         Homepage: https://delphi-strategy.com
         RSS feed: /index.xml
-        GitHub: https://github.com/necopinus
+        GitHub: https://github.com/necopinus/obsidian-remarks
         Author: https://necopinus.xyz
     layout:
       position: footer
