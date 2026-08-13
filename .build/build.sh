@@ -73,4 +73,5 @@ if [[ "$1" == "serve" ]]; then
 	npx quartz build --serve
 else
 	npx quartz build
+	sed -i'' -e 's#href=\&quot;[\./]\+/#href=\&quot;https://remarks.delphi-strategy.com/#g;s#src=\&quot;[\./]\+/#src=\&quot;https://remarks.delphi-strategy.com/#g;' ./public/index.xml
 fi
