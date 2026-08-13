@@ -87,11 +87,7 @@ body.theme-dark .callout[data-callout="quote"] {
   --bg: #504945;
 }
 
-// Use slightly more generous spacing for search / button group
-.left.sidebar>.flex-component {
-  gap: 1rem !important;
-}
-
+// Fix search / button group placement on small screens
 @media not (min-width: 800px) {
   .left.sidebar>.flex-component {
     margin-right: calc(5px - 1rem);

@@ -210,7 +210,7 @@ layout:
     toolbar:
       priority: 35
       direction: row
-      gap: 0.5rem
+      gap: 1rem
   byPageType:
     "404":
       positions:
