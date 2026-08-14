@@ -6,7 +6,8 @@ configuration:
   enablePopovers: true
   locale: en-US
   baseUrl: remarks.delphi-strategy.com
-  ignorePatterns: []
+  ignorePatterns:
+    - .git
   theme:
     fontOrigin: googleFonts
     cdnCaching: true

@@ -54,7 +54,6 @@ cd quartz || exit 1
 	tar -cf - -C ../../../ \
 	        --exclude='.build' \
 	        --exclude='.DS_Store' \
-	        --exclude='.git' \
 	        --exclude='.gitignore' \
 	        --exclude='.nomedia' \
 	        --exclude='.obsidian' \
