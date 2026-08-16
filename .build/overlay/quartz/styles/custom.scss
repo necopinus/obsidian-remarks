@@ -120,6 +120,17 @@ body.theme-dark .callout[data-callout="quote"] {
   margin-bottom: 1rem;
 }
 
+// Better handling of notes with many tags
+.note-properties .note-properties-tags {
+  flex-wrap: wrap;
+}
+
+.note-properties .note-properties-tags .tag-link,
+.note-properties .note-properties-separator {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
 // Better element separation for explorer and TOC
 @media not (min-width: 800px) {
   .explorer-content>ul.overflow li {

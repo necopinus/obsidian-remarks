@@ -52,15 +52,16 @@ cd quartz || exit 1
 (
 	cd content || exit 1
 	tar -cf - -C ../../../ \
-	        --exclude='.allowed_signers' \
-	        --exclude='.build' \
-	        --exclude='.DS_Store' \
-	        --exclude='.github' \
-	        --exclude='.gitignore' \
-	        --exclude='.nomedia' \
-	        --exclude='.obsidian' \
-	        --exclude='.trash' \
-	                  . | tar -xvf -
+	    --exclude='.allowed_signers' \
+	    --exclude='.build' \
+	    --exclude='.DS_Store' \
+	    --exclude='.github' \
+	    --exclude='.gitignore' \
+	    --exclude='.keep' \
+	    --exclude='.nomedia' \
+	    --exclude='.obsidian' \
+	    --exclude='.trash' \
+	              . | tar -xvf -
 )
 
 cp -avf ../overlay/* ./
