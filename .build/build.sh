@@ -55,6 +55,7 @@ cd quartz || exit 1
 	        --exclude='.allowed_signers' \
 	        --exclude='.build' \
 	        --exclude='.DS_Store' \
+	        --exclude='.github' \
 	        --exclude='.gitignore' \
 	        --exclude='.nomedia' \
 	        --exclude='.obsidian' \
