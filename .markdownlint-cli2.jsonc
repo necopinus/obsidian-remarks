@@ -1,0 +1,52 @@
+{
+  "config": {
+    "default": true,
+
+    // Headings
+    "MD003": { "style": "atx" },
+
+    // Lists
+    "MD004": { "style": "dash" },
+
+    // Indentation
+    //
+    // Disable MD005 (list-indent), MD007 (indent), and MD010 (no-hard-tabs).
+    // The vault uses hard tabs in code blocks and at line-continuations,
+    // and these default rules assume 2/4-space indentation.
+    "MD005": false,
+    "MD007": false,
+    "MD010": false,
+
+    // Length
+    "MD013": false,
+
+    // Duplicate headings only matter within a sibling section
+    "MD024": { "siblings_only": true },
+
+    // Inline HTML / autolinks / frontmatter are all in use
+    "MD033": false,
+    "MD034": false,
+    "MD036": false,
+    "MD041": false,
+
+    // Code blocks / spans
+    "MD046": { "style": "fenced" },
+    "MD048": { "style": "backtick" },
+    "MD049": { "style": "underscore" },
+    "MD050": { "style": "asterisk" },
+
+    // MD059 (no bare URLs as link text) is too aggressive for an Obsidian
+    // vault that often uses bare URLs in body prose.
+    "MD059": false
+  },
+  "globs": [
+    "**/*.md",
+    "!.obsidian/plugins/**",
+    "!.build/quartz/**"
+  ],
+  "ignores": [
+    ".obsidian/plugins/**",
+    ".build/quartz/**",
+    "node_modules/**"
+  ]
+}
