@@ -1,0 +1,48 @@
+# Top-level defaults apply to all files unless overridden below.
+# Per-language overrides reflect each language's dominant convention in
+# this repo.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Nix is formatted by alejandra (2-space indent).
+[*.nix]
+indent_style = space
+indent_size = 2
+
+# Python is formatted by ruff format (4-space indent).
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Shell scripts may contain `<<-EOF` HEREDOC blocks whose body lines
+# *must* be tab-indented (otherwise the leading tab is part of the
+# substituted text). shfmt with -i 0 preserves tabs wherever the file
+# already uses them, but we set indent_style = tab here so that any
+# editor honoring editorconfig doesn't normalize them to spaces.
+[*.sh]
+indent_style = tab
+indent_size = 4
+
+# YAML in this repo is 2-space (matches alejandra's default style for
+# most data structures; yamllint's default indentation rule agrees).
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
+
+# Markdown: per the user's preference, tabs are common in vault content
+# (code blocks, line continuations). Don't try to enforce one style.
+[*.md]
+indent_style = tab
+indent_size = 4
+trim_trailing_whitespace = false
+
+# Makefiles require literal tabs in recipe lines.
+[Makefile]
+indent_style = tab

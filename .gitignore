@@ -15,5 +15,12 @@
 .obsidian/workspaces.json
 .trash/
 
+# Python bytecode caches
+__pycache__/
+*.pyc
+
 # Do not check in build directory
 .build/quartz/
+.build/.venv/
+.build/uv.lock
+.build/__pycache__/

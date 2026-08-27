@@ -113,6 +113,10 @@ body.theme-dark .callout[data-callout="quote"] {
   margin-bottom: 1rem;
 }
 
+// `.transclude > .transclude > h2`: when one transclude is nested
+// inside another (an Obsidian embed inside an embed), demote the inner
+// h2 to the same size as a regular h3 so the visual hierarchy stays
+// readable.
 .transclude>h3,
 .transclude>.transclude>h2 {
   font-size: 1rem;
@@ -151,34 +155,13 @@ ul.toc-content li:last-child {
   border-bottom: none;
 }
 
-ul.toc-content.overflow .depth-0 {
-  margin-left: 0;
-  padding-left: 0;
-}
-
-ul.toc-content.overflow .depth-1 {
-  margin-left: 1rem;
-  padding-left: 0;
-}
-
-ul.toc-content.overflow .depth-2 {
-  margin-left: 2rem;
-  padding-left: 0;
-}
-
-ul.toc-content.overflow .depth-3 {
-  margin-left: 3rem;
-  padding-left: 0;
-}
-
-ul.toc-content.overflow .depth-4 {
-  margin-left: 4rem;
-  padding-left: 0;
-}
-
-ul.toc-content.overflow .depth-5 {
-  margin-left: 5rem;
-  padding-left: 0;
+// Indent each depth level of the TOC by one rem. Compiled out at zero
+// iterations because `.depth-0` has nothing to nest under it.
+@each $i in 0 1 2 3 4 5 {
+  ul.toc-content.overflow .depth-#{$i} {
+    margin-left: #{$i}rem;
+    padding-left: 0;
+  }
 }
 
 // Tweak trailing page elements

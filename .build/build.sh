@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
+#
+# Usage: ./.build/build.sh [clean|serve]
+#   (no arg): standard build
+#   clean:    remove the cloned Quartz checkout
+#   serve:    run `npx quartz build --serve` instead of a one-shot build
 
 set -e
 
 # Make sure npm/npx are available
 #
-if [[ -z "$(which npm 2> /dev/null)" ]]; then
-	echo "Could not find 'npm' in your system's PATH!"
-	exit 1
-fi
-
-if [[ -z "$(which npx 2> /dev/null)" ]]; then
-	echo "Could not find 'npx' in your system's PATH!"
-	exit 1
-fi
+for cmd in npm npx; do
+	if ! command -v "$cmd" >/dev/null 2>&1; then
+		echo "Could not find '$cmd' in your system's PATH!"
+		exit 1
+	fi
+done
 
 # Switch to this script's directory
 #
@@ -31,10 +33,10 @@ if [[ "$1" == "clean" ]]; then
 	if [[ -e quartz ]]; then
 		rm -rf quartz
 	fi
-	exit
+	exit 0
 fi
 
-# Set up the build directory.
+# Set up the build directory
 #
 if [[ ! -d quartz ]]; then
 	if [[ -e quartz ]]; then
@@ -50,18 +52,21 @@ fi
 cd quartz || exit 1
 
 (
-	cd content || exit 1
-	tar -cf - -C ../../../ \
-	    --exclude='.allowed_signers' \
-	    --exclude='.build' \
-	    --exclude='.DS_Store' \
-	    --exclude='.github' \
-	    --exclude='.gitignore' \
-	    --exclude='.keep' \
-	    --exclude='.nomedia' \
-	    --exclude='.obsidian' \
-	    --exclude='.trash' \
-	              . | tar -xvf -
+	cd "$SCRIPT_DIR/quartz/content" || exit 1
+	# Copy the repo into content/, excluding items that shouldn't end up
+	# in the published site.
+	#
+	tar -cf - -C "$SCRIPT_DIR/.." \
+		--exclude='.allowed_signers' \
+		--exclude='.build' \
+		--exclude='.DS_Store' \
+		--exclude='.github' \
+		--exclude='.gitignore' \
+		--exclude='.keep' \
+		--exclude='.nomedia' \
+		--exclude='.obsidian' \
+		--exclude='.trash' \
+		. | tar -xvf -
 )
 
 cp -avf ../overlay/* ./
@@ -75,5 +80,10 @@ if [[ "$1" == "serve" ]]; then
 	npx quartz build --serve
 else
 	npx quartz build
-	sed -i'' -e 's#href=\&quot;[\./]\+/#href=\&quot;https://remarks.delphi-strategy.com/#g;s#src=\&quot;[\./]\+/#src=\&quot;https://remarks.delphi-strategy.com/#g;' ./public/index.xml
+	# Absolute-ize the RSS feed's relative hrefs/srcs so the published
+	# feed points at our hosted site (not the local checkout).
+	#
+	sed -E 's#(href|src)=\&quot;[\./]+/#\1=\&quot;https://remarks.delphi-strategy.com/#g' \
+		./public/index.xml >./public/index.xml.new
+	mv ./public/index.xml.new ./public/index.xml
 fi

@@ -5,6 +5,17 @@ on:
     branches:
       - main
 
+# Default to least-privilege. Netlify deploys use secrets, not
+# GITHUB_TOKEN, so we only need read on the repo checkout.
+permissions:
+  contents: read
+
+# Don't race concurrent pushes against each other. The later deploy
+# wins; we don't cancel in-progress deploys.
+concurrency:
+  group: website-rebuild
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
