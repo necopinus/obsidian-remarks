@@ -1,0 +1,23 @@
+# yamllint configuration. See https://yamllint.readthedocs.io/
+#
+# We start from yamllint's default ruleset and selectively disable a few
+# lints that produce noise on the kinds of YAML files this repo
+# actually contains:
+#
+# - `document-start`: most of the YAML in this repo is configuration
+#   data (Quartz config, GitHub Actions workflows), not a YAML document
+#   with a `---` start marker. The `---` is meaningful for frontmatter,
+#   not for arbitrary data files.
+#
+# - `truthy`: GitHub Actions requires the literal `on:` keyword as a
+#   trigger; yamllint reads `on` as YAML 1.1's `true` alias and warns
+#   about it. Setting `check-keys: false` skips the key check (so `on:`
+#   is fine) while still catching truthy values like `enabled: yes`.
+#
+extends: default
+
+rules:
+  document-start: disable
+
+  truthy:
+    check-keys: false

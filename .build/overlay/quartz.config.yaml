@@ -1,4 +1,14 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+
+# Anchors
+#
+# `&rssLimit` / `*rssLimit` lets us declare the same integer (the number of
+# recent notes / RSS entries) once and have Quartz's content-index and
+# recent-notes plugins agree on it automatically.
+#
+anchors:
+  rssLimit: &rssLimit 10
+
 configuration:
   pageTitle: Delphi Foresight Strategy
   pageTitleSuffix: ":: Delphi Foresight Strategy"
@@ -17,25 +27,25 @@ configuration:
       code: Noto Sans Mono
     colors:
       lightMode:
-        light: "#fbf1c7"           # --bg1
-        lightgray: "#ebdbb2"       # --ui1
-        gray: "#bdae93"            # --ui3
-        darkgray: "#282828"        # --tx1
-        dark: "#7c6f64"            # --tx2
-        secondary: "#bb520c"       # --ax1 (orange)
-        tertiary: "#954109"        # --ax2 (orange)
-        highlight: "#bb520c1a"     # --hl1 (orange)
-        textHighlight: "#d7992166" # --hl2
+        light: "#fbf1c7"            # --bg1
+        lightgray: "#ebdbb2"        # --ui1
+        gray: "#bdae93"             # --ui3
+        darkgray: "#282828"         # --tx1
+        dark: "#7c6f64"             # --tx2
+        secondary: "#bb520c"        # --ax1 (orange)
+        tertiary: "#954109"         # --ax2 (orange)
+        highlight: "#bb520c1a"      # --hl1 (orange)
+        textHighlight: "#d7992166"  # --hl2
       darkMode:
-        light: "#282828"           # --bg1
-        lightgray: "#3c3836"       # --ui1
-        gray: "#665c54"            # --ui3
-        darkgray: "#fbf1c7"        # --tx1
-        dark: "#bdae93"            # --tx2
-        secondary: "#bb520c"       # --ax1 (orange)
-        tertiary: "#e1630e"        # --ax2 (orange)
-        highlight: "#bb520c1a"     # --hl1 (orange)
-        textHighlight: "#d7992166" # --hl2
+        light: "#282828"            # --bg1
+        lightgray: "#3c3836"        # --ui1
+        gray: "#665c54"             # --ui3
+        darkgray: "#fbf1c7"         # --tx1
+        dark: "#bdae93"             # --tx2
+        secondary: "#bb520c"        # --ax1 (orange)
+        tertiary: "#e1630e"         # --ax2 (orange)
+        highlight: "#bb520c1a"      # --hl1 (orange)
+        textHighlight: "#d7992166"  # --hl2
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -89,7 +99,7 @@ plugins:
   - source: "@quartz-community/content-index"
     enabled: true
     options:
-      rssLimit: 10 # Sync with recent-notes > options.limit
+      rssLimit: *rssLimit
       rssFullHtml: true
       includeEmptyFiles: false
   - source: "@quartz-community/favicon"
@@ -176,7 +186,7 @@ plugins:
     enabled: true
     options:
       title: Recent notes
-      limit: 10 # Sync with content-index > options.rssLimit
+      limit: *rssLimit
       showTags: false
       linkToMore: index
       hideTagPages: true
