@@ -1,43 +1,66 @@
 {
   "config": {
     "default": true,
-
     // Headings
-    "MD003": { "style": "atx" },
-
+    "MD003": {
+      "style": "atx"
+    },
     // Lists
-    "MD004": { "style": "dash" },
-
+    "MD004": {
+      "style": "dash"
+    },
     // Indentation
     //
-    // Disable MD005 (list-indent), MD007 (indent), and MD010 (no-hard-tabs).
-    // The vault uses hard tabs in code blocks and at line-continuations,
-    // and these default rules assume 2/4-space indentation.
-    "MD005": false,
-    "MD007": false,
-    "MD010": false,
-
+    // 2-space indentation, no hard tabs (MD010). MD010's spaces_per_tab
+    // codifies the conversion rule; it also covers code blocks (no
+    // tab-requiring languages in the vault — a future Makefile/Go snippet
+    // can use ignore_code_languages or an inline markdownlint-disable).
+    "MD005": true,
+    "MD007": {
+      "indent": 2
+    },
+    "MD010": {
+      "spaces_per_tab": 2
+    },
     // Length
     "MD013": false,
-
+    // By convention, opening H1 tags and YAML title properties are
+    // expected to both be present and to match
+    "MD025": {
+      "front_matter_title": ""
+    },
     // Duplicate headings only matter within a sibling section
-    "MD024": { "siblings_only": true },
-
+    "MD024": {
+      "siblings_only": true
+    },
     // Inline HTML / autolinks / frontmatter are all in use
     "MD033": false,
     "MD034": false,
     "MD036": false,
     "MD041": false,
-
     // Code blocks / spans
-    "MD046": { "style": "fenced" },
-    "MD048": { "style": "backtick" },
-    "MD049": { "style": "underscore" },
-    "MD050": { "style": "asterisk" },
-
+    "MD046": {
+      "style": "fenced"
+    },
+    "MD048": {
+      "style": "backtick"
+    },
+    "MD049": {
+      "style": "asterisk"
+    },
+    "MD050": {
+      "style": "asterisk"
+    },
     // MD059 (no bare URLs as link text) is too aggressive for an Obsidian
     // vault that often uses bare URLs in body prose.
-    "MD059": false
+    "MD059": false,
+    // Tables: readability is preferred, but consistency within a table is
+    // what matters. Obsidian and Quartz render all styles fine. "any"
+    // accepts aligned/compact/tight as long as each table is internally
+    // consistent. MD056 (column count) stays enabled.
+    "MD060": {
+      "style": "any"
+    }
   },
   "globs": [
     "**/*.md",
