@@ -8,8 +8,8 @@
 #
 # Requires: shellcheck, shfmt, yamllint, markdownlint-cli2, betterleaks.
 #
-# Set REMARKS_PRE_COMMIT_SKIP_MISSING=1 to warn-and-continue when a tool
-# is unavailable; the default is to fail.
+# Set REMARKS_PRE_COMMIT_SKIP_MISSING=1 to warn-and-continue when a
+# tool is unavailable; the default is to fail.
 
 set -euo pipefail
 
@@ -103,14 +103,22 @@ fi
 
 if [[ ${#YAML_FILES[@]} -gt 0 ]] && require_tool yamllint yaml; then
 	log "yamllint: ${#YAML_FILES[@]} file(s)"
-	yamllint -d "{extends: default, rules: {line-length: {max: 120}}}" "${YAML_FILES[@]}"
+	# Auto-discover `.yamllint.yml` at the repo root; do NOT pass -d
+	# inline or the config file is ignored.
+	yamllint "${YAML_FILES[@]}"
 fi
 
 # --- Markdown (Obsidian-flavored) -----------------------------------------
-
+#
+# markdownlint-cli2 surfaces Obsidian-vault content issues that aren't
+# strictly bugs (frontmatter style, heading/list spacing, table column
+# counts in generated content). They're reported as a "Finding:" summary
+# followed by per-rule violations; per the user's standing direction,
+# surface them but don't gate the commit on them.
+#
 if [[ ${#MD_FILES[@]} -gt 0 ]] && require_tool markdownlint-cli2 markdown; then
 	log "markdownlint-cli2: ${#MD_FILES[@]} file(s)"
-	markdownlint-cli2 --no-globs -c .markdownlint-cli2.jsonc "${MD_FILES[@]}"
+	markdownlint-cli2 --no-globs -c .markdownlint-cli2.jsonc "${MD_FILES[@]}" || true
 fi
 
 # --- Secret scan (always run) ---------------------------------------------
