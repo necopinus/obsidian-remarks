@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 24
       - run: |
-          ./.build/build.sh
+          bash ./.build/build.sh
       - uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
