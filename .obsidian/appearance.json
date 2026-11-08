@@ -1,12 +1,7 @@
 {
-  "accentColor": "",
+  "accentColor": "#bb520c",
   "theme": "moonstone",
   "cssTheme": "Minimal",
-  "enabledCssSnippets": [
-    "Everforest Light Highlight Overrides",
-    "Header",
-    "Minimal Accent"
-  ],
   "showViewHeader": true,
   "translucency": false,
   "baseFontSize": 16
