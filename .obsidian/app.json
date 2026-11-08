@@ -4,8 +4,8 @@
   "showUnsupportedFiles": true,
   "attachmentFolderPath": "assets",
   "showInlineTitle": false,
-  "autoPairBrackets": true,
-  "autoPairMarkdown": true,
+  "autoPairBrackets": false,
+  "autoPairMarkdown": false,
   "showLineNumber": true,
   "mobileToolbarCommands": [
     "editor:undo",
