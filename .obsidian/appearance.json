@@ -5,15 +5,7 @@
   "enabledCssSnippets": [
     "Everforest Light Highlight Overrides",
     "Header",
-    "Minimal Accent",
-    "Markdown Embed Tweaks",
-    "GitHub Alerts",
-    "Custom Callouts",
-    "Callout Tweaks",
-    "Minimal Gruvbox Tweaks",
-    "Accent Orange",
-    "Bullet Journaling Tweaks",
-    "Dataview Tweaks"
+    "Minimal Accent"
   ],
   "showViewHeader": true,
   "translucency": false,
